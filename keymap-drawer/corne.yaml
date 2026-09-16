@@ -1,50 +1,9 @@
 layout: {zmk_keyboard: corne}
 layers:
-  Base:
-  - ESCAPE
-  - J
-  - D
-  - U
-  - A
-  - X
-  - P
-  - H
-  - L
-  - M
-  - W
-  - DELETE
-  - TAB
-  - {t: C, h: LSHIFT}
-  - {t: T, h: LCTRL}
-  - I
-  - E
-  - {t: O, h: '3'}
-  - B
-  - N
-  - R
-  - {t: S, h: LCTRL}
-  - {t: G, h: LEFT SHIFT}
-  - Q
-  - LSHFT
-  - F
-  - V
-  - '['
-  - ''''
-  - ;
-  - Z
-  - Y
-  - ','
-  - .
-  - K
-  - '-'
-  - LGUI
-  - Raise
-  - SPACE
-  - RET
-  - BACKSPACE
-  - Lower
-  Lower:
-  - Sft+0
+  Base: [TAB, Q, W, E, R, T, Y, U, I, O, P, BACKSPACE, ESCAPE, A, S, D, F, G, H, J, K, L, ;, RET, LSHFT, Z, X, C, V, B, N, M, ',', ., /, RSHFT, LGUI, Chiffres, SPACE,
+    Symboles, RALT, LCTRL]
+  Chiffres:
+  - {t: ▽, type: trans}
   - '1'
   - '2'
   - '3'
@@ -55,7 +14,7 @@ layers:
   - '8'
   - '9'
   - '0'
-  - BSPC
+  - '-'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -68,9 +27,11 @@ layers:
   - UP ARROW
   - RIGHT
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - BT CLR
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -79,57 +40,31 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
-  - LGUI
   - {t: ▽, type: trans}
-  - SPACE
-  - RET
   - {t: ▽, type: trans}
-  - {t: RALT, type: held}
-  Raise:
-  - Sft+0
-  - AltGr+.
-  - Sft+/
+  - {t: ▽, type: trans}
+  Symboles:
+  - {t: ▽, type: trans}
+  - AltGr+2
+  - AltGr+3
+  - AltGr+4
+  - AltGr+5
+  - AltGr+6
+  - AltGr+7
   - AltGr+8
   - AltGr+9
-  - '&de_caret'
-  - Sft+1
-  - '|'
-  - Sft+|
-  - Sft+0
-  - Sft+6
-  - ''
-  - LCTRL
-  - AltGr+-
-  - Sft+7
-  - AltGr+7
   - AltGr+0
-  - Sft+]
-  - Sft+-
-  - Sft+8
-  - Sft+9
-  - /
-  - Sft+.
-  - AltGr+Q
-  - LSHFT
-  - '#'
-  - Sft+4
-  - AltGr+|
-  - AltGr+]
-  - '&de_grave'
-  - ']'
-  - Sft+5
-  - Sft+2
-  - Sft+#
-  - Sft+,
-  - ''
-  - LGUI
-  - {type: held}
-  - SPACE
-  - RET
+  - AltGr+-
+  - AltGr+=
   - {t: ▽, type: trans}
-  - ''
-  '3':
+  - '='
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - AltGr+E
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -137,38 +72,19 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '7'
-  - '8'
-  - '9'
-  - ']'
-  - /
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - '0'
-  - '4'
-  - '5'
-  - '6'
-  - Sft+]
-  - Sft+7
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
-  - Sft+0
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
