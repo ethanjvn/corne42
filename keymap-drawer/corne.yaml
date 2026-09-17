@@ -1,20 +1,20 @@
 layout: {zmk_keyboard: corne}
 layers:
-  Base: [ESCAPE, A, Z, E, R, T, Y, U, I, O, P, BACKSPACE, TAB, Q, S, D, F, G, H, J, K, L, M, RET, LSHFT, W, X, C, V, B, N, ',', ;, ':', '!', RSHFT, LCTRL, LGUI, SPACE,
-    Symboles, RALT, LCTRL]
+  Base: [ESCAPE, A, Z, E, R, T, Y, U, I, O, P, BACKSPACE, TAB, Q, S, D, F, G, H, J, K, L, M, RET, LSHFT, W, X, C, V, B, N, ',', ;, ':', '!', RSHFT, LCTRL, Chiffres,
+    SPACE, Symboles, RALT, LGUI]
   Chiffres:
   - {t: ▽, type: trans}
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
+  - '&'
+  - é
+  - '"'
+  - ''''
+  - (
   - '-'
+  - è
+  - _
+  - ç
+  - à
+  - )
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -40,31 +40,31 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   Symboles:
   - {t: ▽, type: trans}
-  - AltGr+2
-  - AltGr+3
-  - AltGr+4
-  - AltGr+5
-  - AltGr+6
-  - AltGr+7
-  - AltGr+8
-  - AltGr+9
-  - AltGr+0
-  - AltGr+-
-  - AltGr+=
+  - '~'
+  - '#'
+  - '{'
+  - '['
+  - '|'
+  - '`'
+  - \
+  - ^
+  - '@'
+  - ']'
+  - '}'
   - {t: ▽, type: trans}
   - '='
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - AltGr+E
+  - €
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
