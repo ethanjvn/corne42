@@ -10,6 +10,17 @@
 #include "keys_fr.h"
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        // Maintenir en même temps les deux touches "Chiffres" et "Symboles"
+        // (les deux pouces intérieurs) active la couche Navigation.
+        combo_navigation {
+            timeout-ms = <50>;
+            key-positions = <37 39>;
+            bindings = <&mo 3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -24,6 +35,7 @@
             //                      | CTRL| LWR | ESPACE|   | RSE | ALT | WIN  |
             // Avec Maj : , devient ?, ; devient ., : devient /, ! devient §
             // (comme sur un vrai clavier AZERTY), rien à configurer en plus.
+            // LWR + RSE maintenues ensemble = couche Navigation (voir plus bas).
 
             display-name = "Base";
             bindings = <
@@ -55,22 +67,45 @@
         };
 
         raise_layer {
-            // Symboles de programmation, accessibles via AltGr comme sur un vrai
-            // clavier AZERTY français. ^ et ` sont des touches mortes : elles se
-            // combinent avec la touche suivante (ex: FR_CARET puis E donne "ê").
-            // Pour taper le caractère seul, appuyer sur la touche puis sur Espace.
+            // Symboles de programmation (AltGr, comme sur un vrai clavier AZERTY
+            // français) + touches de fonction F1-F12 + contrôles médias sur les
+            // rangées du bas, qui étaient inutilisées.
+            // ^ et ` sont des touches mortes : elles se combinent avec la touche
+            // suivante (ex: FR_CARET puis E donne "ê"). Pour taper le caractère
+            // seul, appuyer sur la touche puis sur Espace.
             // -----------------------------------------------------------------------------------------
             // |      |  ~  |  #  |  {  |  [  |  |  |   |  `  |  \  |  ^  |  @  |  ]  |  }   |
-            // |      |  =  |     |     |     |     |   |  €  |     |     |     |     |      |
-            // |      |     |     |     |     |     |   |     |     |     |     |     |      |
+            // |      |  =  | F1  | F2  | F3  | F4  |   | €  | F5  | F6  | F7  | F8  |      |
+            // |      |     | F9  | F10 | F11 | F12 |   |VOL-|VOL+ | ⏯  | ⏮  | ⏭  |      |
             //                    | CTRL|     | ESPACE|  | RSE | ALT | WIN  |
 
             display-name = "Symboles";
             bindings = <
-&trans  &kp FR_TILDE  &kp FR_HASH  &kp FR_LBRACE  &kp FR_LBRKT  &kp FR_PIPE    &kp FR_GRAVE  &kp FR_BSLH  &kp FR_CARET  &kp FR_AT  &kp FR_RBRKT  &kp FR_RBRACE
-&trans  &kp FR_EQUAL  &trans       &trans         &trans        &trans         &kp FR_EURO   &trans       &trans        &trans     &trans        &trans
-&trans  &trans        &trans       &trans         &trans        &trans         &trans        &trans       &trans        &trans     &trans        &trans
+&trans  &kp FR_TILDE  &kp FR_HASH  &kp FR_LBRACE  &kp FR_LBRKT  &kp FR_PIPE    &kp FR_GRAVE  &kp FR_BSLH  &kp FR_CARET  &kp FR_AT     &kp FR_RBRKT  &kp FR_RBRACE
+&trans  &kp FR_EQUAL  &kp F1       &kp F2         &kp F3        &kp F4         &kp FR_EURO   &kp F5       &kp F6        &kp F7        &kp F8        &trans
+&trans  &trans        &kp F9       &kp F10        &kp F11       &kp F12        &kp C_VOL_DN  &kp C_VOL_UP &kp C_PP      &kp C_PREV    &kp C_NEXT    &trans
                                    &trans         &trans        &trans         &trans        &trans       &trans
+            >;
+        };
+
+        nav_layer {
+            // Pavé numérique (côté gauche) + navigation/édition (côté droit),
+            // atteint en maintenant Chiffres + Symboles en même temps (les deux
+            // pouces intérieurs). Les touches KP_xxx sont un vrai pavé
+            // numérique matériel : elles tapent toujours un chiffre, quel que
+            // soit le layout clavier réglé sur l'ordinateur (contrairement à la
+            // rangée de chiffres normale qui dépend de l'AZERTY).
+            // -----------------------------------------------------------------------------------------
+            // |      |  7  |  8  |  9  |  -  |     |   |HOME |  UP | END |PGUP |     | BKSP |
+            // |      |  4  |  5  |  6  |  +  |     |   |GCHE | BAS |DRTE |PGDN |     | DEL  |
+            // |      |  1  |  2  |  3  |  0  |     |   |     |     |     |INS  |     |      |
+
+            display-name = "Navigation";
+            bindings = <
+&trans  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &trans    &kp HOME  &kp UP_ARROW  &kp END   &kp PG_UP  &trans  &kp BACKSPACE
+&trans  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &trans    &kp LEFT  &kp DOWN      &kp RIGHT &kp PG_DN  &trans  &kp DELETE
+&trans  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0     &trans    &trans    &trans        &trans    &kp INSERT &trans  &trans
+                               &trans     &trans        &trans    &trans    &trans        &trans
             >;
         };
     };
