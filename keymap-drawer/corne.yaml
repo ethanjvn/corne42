@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: corne}
 layers:
-  Base: [TAB, Q, W, E, R, T, Y, U, I, O, P, BACKSPACE, ESCAPE, A, S, D, F, G, H, J, K, L, ;, RET, LSHFT, Z, X, C, V, B, N, M, ',', ., /, RSHFT, LGUI, Chiffres, SPACE,
+  Base: [ESCAPE, A, Z, E, R, T, Y, U, I, O, P, BACKSPACE, TAB, Q, S, D, F, G, H, J, K, L, M, RET, LSHFT, W, X, C, V, B, N, ',', ;, ':', '!', RSHFT, LCTRL, LGUI, SPACE,
     Symboles, RALT, LCTRL]
   Chiffres:
   - {t: ▽, type: trans}
@@ -40,7 +40,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
