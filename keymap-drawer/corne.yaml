@@ -16,7 +16,7 @@ layers:
   - à
   - )
   - {t: ▽, type: trans}
-  - '='
+  - {t: ▽, type: trans}
   - UP
   - ù
   - $
@@ -24,18 +24,18 @@ layers:
   - €
   - <
   - '>'
-  - {t: ▽, type: trans}
+  - '='
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - LEFT
   - DOWN
   - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - BT CLR
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
