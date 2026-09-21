@@ -48,8 +48,8 @@
             // |      |  &  |  é  |  "  |  '  |  (  |   |  -  |  è  |  _  |  ç  |  à  |  )   |
             // (Maj)  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
             // (AltGr)|  ~  |  #  |  {  |  [  |  |  |   |  `  |  \  |  ^  |  @  |  ]  |  }   |
-            // |      | HAUT|  ù  |  $  |  %  |     |   |  €  |  <  |  >  |     |     |      |
-            // |      |GCHE | BAS |DRTE |BTCLR|BT1  |   | BT2 |     |     |     |     |      |
+            // |      | HAUT|  ù  |  $  |  %  |     |   |  €  |  <  |  >  |  =  |     |      |
+            // |      |GCHE | BAS |DRTE |     |     |   |BTCLR|BT0  |BT1  |     |     |      |
             //                    | CTRL|     | ESPACE|  |  2  |     |      |
             // Flèches sur S (haut) / W X C (gauche bas droite, en T inversé).
             // Bluetooth réduit à 2 profils (BT_CLR + BT_SEL 0/1) : suffisant
@@ -58,8 +58,8 @@
             display-name = "1";
             bindings = <
 &trans  &kp FR_AMPR  &kp FR_EACUTE  &kp FR_DQT    &kp FR_QUOT   &kp FR_LPAR    &kp FR_HYPHEN  &kp FR_EGRAVE  &kp FR_UNDER  &kp FR_CCEDIL  &kp FR_AGRAVE  &kp FR_RPAR
-&trans  &kp FR_EQUAL &kp UP         &kp FR_UGRAVE &kp FR_DOLLAR &kp FR_PERCENT &kp FR_EURO    &kp FR_LT      &kp FR_GT     &trans         &trans         &trans
-&trans  &kp LEFT     &kp DOWN       &kp RIGHT     &bt BT_CLR    &bt BT_SEL 0   &bt BT_SEL 1   &trans         &trans        &trans         &trans         &trans
+&trans  &trans       &kp UP         &kp FR_UGRAVE &kp FR_DOLLAR &kp FR_PERCENT &kp FR_EURO    &kp FR_LT      &kp FR_GT     &kp FR_EQUAL   &trans         &trans
+&trans  &kp LEFT     &kp DOWN       &kp RIGHT     &trans        &trans         &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1  &trans         &trans         &trans
                                     &trans        &trans        &trans         &trans         &trans        &trans
             >;
         };
