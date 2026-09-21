@@ -17,20 +17,20 @@ layers:
   - )
   - {t: ▽, type: trans}
   - '='
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - €
-  - LEFT
-  - DOWN
   - UP ARROW
-  - RIGHT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - BT CLR
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
+  - €
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LEFT
+  - DOWN
+  - RIGHT
   - {t: BT, h: '2'}
   - ù
   - $
@@ -47,7 +47,7 @@ layers:
   - {type: held}
   '2':
   - HOME
-  - UP ARROW
+  - {t: ▽, type: trans}
   - END
   - PG UP
   - {t: ▽, type: trans}
@@ -58,9 +58,9 @@ layers:
   - KP 9
   - KP SLASH
   - KP MULTIPLY
-  - LEFT
-  - DOWN
-  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - PG DN
   - INSERT
   - DELETE
