@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: corne}
 layers:
-  Base: [ESCAPE, Q, W, E, R, T, Y, U, I, O, P, BACKSPACE, TAB, A, S, D, F, G, H, J, K, L, M, RET, LSHFT, Z, X, C, V, B, N, ;, ;, ':', '!', RSHFT, LCTRL, LEFT GUI,
-    SPACE, Symboles, RALT, RCTRL]
+  Base: [ESCAPE, A, Z, E, R, T, Y, U, I, O, P, BACKSPACE, TAB, Q, S, D, F, G, H, J, K, L, M, RET, LSHFT, W, X, C, V, B, N, ',', ;, ':', '!', RSHFT, LCTRL, Chiffres,
+    SPACE, Symboles, RALT, LGUI]
   Chiffres:
   - {t: ▽, type: trans}
   - '&'
@@ -40,7 +40,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -71,19 +71,19 @@ layers:
   - F8
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - ù
   - F9
   - F10
   - F11
   - F12
-  - VOL DN
-  - VOL UP
-  - PP
-  - PREV
-  - NEXT
+  - $
+  - '%'
+  - <
+  - '>'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - Navigation
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
@@ -93,8 +93,8 @@ layers:
   - KP 7
   - KP 8
   - KP 9
-  - KP MINUS
-  - {t: ▽, type: trans}
+  - KP SLASH
+  - KP MULTIPLY
   - HOME
   - UP ARROW
   - END
@@ -105,25 +105,25 @@ layers:
   - KP 4
   - KP 5
   - KP 6
+  - KP MINUS
   - KP PLUS
-  - {t: ▽, type: trans}
   - LEFT
   - DOWN
   - RIGHT
   - PG DN
-  - {t: ▽, type: trans}
+  - INSERT
   - DELETE
   - {t: ▽, type: trans}
   - KP 1
   - KP 2
   - KP 3
   - KP 0
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - INSERT
-  - {t: ▽, type: trans}
+  - KP DOT
+  - VOL DN
+  - VOL UP
+  - PP
+  - PREV
+  - NEXT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
@@ -131,6 +131,3 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-combos:
-- p: [37, 39]
-  k: Navigation
