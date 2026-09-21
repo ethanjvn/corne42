@@ -53,15 +53,16 @@
             // |      |  &  |  é  |  "  |  '  |  (  |   |  -  |  è  |  _  |  ç  |  à  |  )   |
             // (Maj)  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
             // (AltGr)|  ~  |  #  |  {  |  [  |  |  |   |  `  |  \  |  ^  |  @  |  ]  |  }   |
-            // |      |     |     |     |     |     |   |  €  | GCHE| BAS | HAUT| DRTE|      |
-            // |      | BTCLR|BT1 | BT2 | BT3 |  ù  |   |  $  |  %  |  <  |  >  |     |      |
+            // |      | HAUT|BTCLR|BT1  | BT2 |     |   |  €  |     |     |     |     |      |
+            // |      |GCHE | BAS |DRTE | BT3 |  ù  |   |  $  |  %  |  <  |  >  |     |      |
             //                    | CTRL|     | ESPACE|  |  3  |     |      |
+            // Flèches sur S (haut) / W X C (gauche bas droite, en T inversé).
 
             display-name = "1";
             bindings = <
 &trans  &kp FR_AMPR  &kp FR_EACUTE  &kp FR_DQT    &kp FR_QUOT   &kp FR_LPAR    &kp FR_HYPHEN  &kp FR_EGRAVE  &kp FR_UNDER  &kp FR_CCEDIL  &kp FR_AGRAVE  &kp FR_RPAR
-&trans  &kp FR_EQUAL &trans         &trans        &trans        &trans         &kp FR_EURO    &kp LEFT       &kp DOWN      &kp UP_ARROW   &kp RIGHT      &trans
-&trans  &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &kp FR_UGRAVE  &kp FR_DOLLAR  &kp FR_PERCENT &kp FR_LT     &kp FR_GT      &trans         &trans
+&trans  &kp FR_EQUAL &kp UP_ARROW   &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1   &kp FR_EURO    &trans         &trans        &trans         &trans         &trans
+&trans  &kp LEFT     &kp DOWN       &kp RIGHT     &bt BT_SEL 2  &kp FR_UGRAVE  &kp FR_DOLLAR  &kp FR_PERCENT &kp FR_LT     &kp FR_GT      &trans         &trans
                                     &trans        &trans        &trans         &mo 3          &trans        &trans
             >;
         };
@@ -72,16 +73,18 @@
             // numérique matériel : elles tapent toujours un chiffre quel que
             // soit le layout clavier réglé sur l'ordinateur.
             // -----------------------------------------------------------------------------------------
-            // |      |HOME |  UP | END |PGUP |     |   |     |  7  |  8  |  9  |  /  |  *   |
-            // |      |GCHE | BAS |DRTE |PGDN | INS |   |     |  4  |  5  |  6  |  -  |  +   |
+            // |      |HOME |     | END |PGUP |     |   |     |  7  |  8  |  9  |  /  |  *   |
+            // |      |     |     |     |PGDN | INS |   |     |  4  |  5  |  6  |  -  |  +   |
             // |      |     |     |     |     |     |   |     |  1  |  2  |  3  |  0  |  .   |
+            // Flèches retirées d'ici : elles ne sont que sur la couche 1
+            // (S/W/X/C), pour éviter le doublon.
             // Le * ci-dessus est le vrai astérisque ASCII (touche pavé
             // numérique), pas le symbole × — important si tu codes.
 
             display-name = "2";
             bindings = <
-&kp HOME  &kp UP_ARROW  &kp END    &kp PG_UP  &trans      &kp BACKSPACE      &trans  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_SLASH  &kp KP_MULTIPLY
-&kp LEFT  &kp DOWN      &kp RIGHT  &kp PG_DN  &kp INSERT  &kp DELETE         &trans  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp KP_PLUS
+&kp HOME  &trans        &kp END    &kp PG_UP  &trans      &kp BACKSPACE      &trans  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_SLASH  &kp KP_MULTIPLY
+&trans    &trans        &trans     &kp PG_DN  &kp INSERT  &kp DELETE         &trans  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp KP_PLUS
 &trans    &trans        &trans     &trans     &trans      &trans             &trans  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0     &kp KP_DOT
                                     &trans     &trans      &trans             &trans  &trans      &trans
             >;

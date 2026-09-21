@@ -163,6 +163,7 @@
     <div class="note"><b>Accès direct.</b> Maintenir <b>1</b> (pouce droit) ou <b>2</b> (pouce gauche) — repère violet sur le schéma pour le pouce "2".</div>
     <div class="note"><span class="swatch" style="background:var(--accent-nest)"></span><b>Accès imbriqué.</b> En maintenant 1, le pouce qui ouvre normalement 2 (Navigation) ouvre à la place la couche 3 (F-keys/média).</div>
     <div class="note"><b>3 niveaux, 1 seule touche.</b> Sur la rangée du haut de la couche 1 : rien = accent, + Maj = chiffre, + AltGr = symbole. Les trois sont de vraies touches physiques combinées par l'OS, rien n'est codé "en dur" pour ça.</div>
+    <div class="note"><b>Flèches.</b> Un seul emplacement, sur la couche 1 : S = haut, W/X/C = gauche/bas/droite (T inversé). La couche 2 ne les a plus, pour éviter le doublon.</div>
     <div class="note"><b>Touches mortes (·).</b> <span style="color:var(--accent-1alt);font-family:'JetBrains Mono',monospace">`</span> et <span style="color:var(--accent-1alt);font-family:'JetBrains Mono',monospace">^</span> se combinent avec la touche suivante — ex. <b>^</b> puis <b>E</b> donne <b>ê</b>. Le <b>*</b> de la couche 2 est le vrai astérisque ASCII (pavé numérique), pas le symbole ×.</div>
   </footer>
 </div>
@@ -172,7 +173,7 @@
   // [base, tl="1"+AltGr, tr="2", br="1" seule, bl="3", kind, deadKey?, nestLabel?]
   var K = [
     ["Échap","","Home","","",'mod'],
-    ["A","","↑","&","F1",'letter'],
+    ["A","","","&","F1",'letter'],
     ["Z","~","Fin","é","F2",'letter'],
     ["E","#","PgUp","\"","F3",'letter'],
     ["R","{","","'","F4",'letter'],
@@ -184,12 +185,12 @@
     ["P","@","/","à","F10",'letter'],
     ["⌫","]","*",")","",'mod'],
 
-    ["Tab","","←","","",'mod'],
-    ["Q","}","↓","=","F11",'letter'],
-    ["S","","→","","F12",'letter'],
-    ["D","","PgDn","","",'letter'],
-    ["F","","Ins","","",'letter'],
-    ["G","","Suppr","","",'letter'],
+    ["Tab","","","","",'mod'],
+    ["Q","}","","=","F11",'letter'],
+    ["S","","","↑","F12",'letter'],
+    ["D","","PgDn","BT✕","",'letter'],
+    ["F","","Ins","BT1","",'letter'],
+    ["G","","Suppr","BT2","",'letter'],
     ["H","","","€","Vol−",'letter'],
     ["J","","4","←","Vol+",'letter'],
     ["K","","5","↓","⏯",'letter'],
@@ -198,9 +199,9 @@
     ["⏎","","+","","",'mod'],
 
     ["Maj","","","","",'mod'],
-    ["W","","","BT✕","",'letter'],
-    ["X","","","BT1","",'letter'],
-    ["C","","","BT2","",'letter'],
+    ["W","","","←","",'letter'],
+    ["X","","","↓","",'letter'],
+    ["C","","","→","",'letter'],
     ["V","","","BT3","",'letter'],
     ["B","$","","ù","",'letter'],
     ["N","","","$","",'letter'],
