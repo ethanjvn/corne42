@@ -1,5 +1,5 @@
 <title>Plan de touches Corne42</title>
-<meta name="description" content="Référence visuelle des 42 touches et de leurs 5 couches (Base, 1, 2, 3, 4)">
+<meta name="description" content="Référence visuelle des 42 touches et de leurs 3 couches (Base, 1, 2, 3)">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <style>
@@ -11,9 +11,9 @@
     --key-edge:#d7d2c8;
     --key-shadow:rgba(30,35,32,0.10);
     --accent-1:#a3701f;
-    --accent-2:#b1483a;
-    --accent-3:#1f7a68;
-    --accent-4:#6b6f8a;
+    --accent-1alt:#b1483a;
+    --accent-2:#1f7a68;
+    --accent-3:#6b6f8a;
     --accent-nest:#5b4b9c;
   }
   @media (prefers-color-scheme: dark){
@@ -25,9 +25,9 @@
       --key-edge:#333c3f;
       --key-shadow:rgba(0,0,0,0.45);
       --accent-1:#d9a24e;
-      --accent-2:#e0776a;
-      --accent-3:#4fbfa6;
-      --accent-4:#9ea3c4;
+      --accent-1alt:#e0776a;
+      --accent-2:#4fbfa6;
+      --accent-3:#9ea3c4;
       --accent-nest:#9b8ce0;
     }
   }
@@ -39,9 +39,9 @@
     --key-edge:#333c3f;
     --key-shadow:rgba(0,0,0,0.45);
     --accent-1:#d9a24e;
-    --accent-2:#e0776a;
-    --accent-3:#4fbfa6;
-    --accent-4:#9ea3c4;
+    --accent-1alt:#e0776a;
+    --accent-2:#4fbfa6;
+    --accent-3:#9ea3c4;
     --accent-nest:#9b8ce0;
   }
 
@@ -55,7 +55,6 @@
   h1{ font-family:"JetBrains Mono", monospace; font-size:clamp(1.5rem,4vw,2.1rem); font-weight:700; margin:0 0 .5rem; text-wrap:balance; letter-spacing:-0.01em; }
   header p{ color:var(--ink-dim); max-width:42rem; line-height:1.55; margin:0; font-size:.94rem; }
 
-  /* légende */
   .legend{
     display:flex; flex-wrap:wrap; gap:.55rem 1.1rem;
     margin:1.4rem 0 2.2rem; padding:.9rem 1.1rem;
@@ -67,20 +66,19 @@
   }
   .legend .diagram b{ position:absolute; font-family:"JetBrains Mono",monospace; font-weight:700; font-size:1.05rem; inset:0; display:flex; align-items:center; justify-content:center; }
   .legend .diagram i{ position:absolute; font-style:normal; font-size:.5rem; font-weight:600; }
-  .legend .diagram .tl{ top:.15rem; left:.25rem; color:var(--accent-2); }
-  .legend .diagram .tr{ top:.15rem; right:.25rem; color:var(--accent-3); }
+  .legend .diagram .tl{ top:.15rem; left:.25rem; color:var(--accent-1alt); }
+  .legend .diagram .tr{ top:.15rem; right:.25rem; color:var(--accent-2); }
   .legend .diagram .br{ bottom:.15rem; right:.25rem; color:var(--accent-1); }
-  .legend .diagram .bl{ bottom:.15rem; left:.25rem; color:var(--accent-4); }
+  .legend .diagram .bl{ bottom:.15rem; left:.25rem; color:var(--accent-3); }
   .legend-items{ display:flex; flex-wrap:wrap; gap:.5rem 1.3rem; align-items:center; font-size:.82rem; }
   .legend-items span{ display:flex; align-items:center; gap:.4rem; white-space:nowrap; }
   .dot{ width:.55rem; height:.55rem; border-radius:50%; flex:none; }
   .dot.base{ background:var(--ink); }
   .dot.c1{ background:var(--accent-1); }
+  .dot.c1alt{ background:var(--accent-1alt); }
   .dot.c2{ background:var(--accent-2); }
   .dot.c3{ background:var(--accent-3); }
-  .dot.c4{ background:var(--accent-4); }
 
-  /* board */
   .board{ display:flex; flex-direction:column; gap:.5rem; align-items:center; margin-bottom:1.6rem; }
   .row{ display:flex; gap:2.4rem; }
   .hand{ display:flex; gap:.4rem; }
@@ -109,10 +107,10 @@
   }
   .key.mod .base{ font-family:"IBM Plex Sans",sans-serif; font-weight:600; font-size:.62rem; padding:.2rem; text-align:center; line-height:1.15; }
   .key .corner{ position:absolute; font-family:"JetBrains Mono",monospace; font-weight:600; font-size:.54rem; line-height:1; }
-  .key .tl{ top:.26rem; left:.3rem; color:var(--accent-2); }
-  .key .tr{ top:.26rem; right:.3rem; color:var(--accent-3); }
+  .key .tl{ top:.26rem; left:.3rem; color:var(--accent-1alt); }
+  .key .tr{ top:.26rem; right:.3rem; color:var(--accent-2); }
   .key .br{ bottom:.26rem; right:.3rem; color:var(--accent-1); }
-  .key .bl{ bottom:.26rem; left:.3rem; color:var(--accent-4); }
+  .key .bl{ bottom:.26rem; left:.3rem; color:var(--accent-3); }
   .key .dead::after{ content:"\00B7"; }
   .key .nest{ position:absolute; top:.3rem; left:0; right:0; text-align:center; color:var(--accent-nest); font-size:.58rem; font-weight:700; }
 
@@ -142,82 +140,82 @@
 <div class="wrap">
   <header>
     <p class="eyebrow">corne42 · config/corne.keymap</p>
-    <h1>Plan de touches — 5 couches sur un keycap</h1>
-    <p>Chaque touche du schéma correspond à une position physique du clavier. Le gros caractère au centre est ce qu'elle tape en <b>Base</b> ; les quatre coins montrent ce qu'elle devient sur les couches 1 à 4, quand ça change — sinon, pas de coin, ça veut dire "pareil qu'en Base".</p>
+    <h1>Plan de touches — 3 couches, 4 niveaux par touche</h1>
+    <p>La couche <b>1</b> est fusionnée : chaque touche de la rangée du haut a 3 niveaux, comme un vrai clavier AZERTY (rien / +Maj / +AltGr). Le gros caractère au centre est la Base ; les quatre coins montrent les autres niveaux, quand ça change.</p>
   </header>
 
   <div class="legend">
     <div class="diagram">
-      <i class="tl">~</i><i class="tr">7</i><b>A</b><i class="bl">F1</i><i class="br">&amp;</i>
+      <i class="tl">~</i><i class="tr">↑</i><b>A</b><i class="bl">F1</i><i class="br">&amp;</i>
     </div>
     <div class="legend-items">
       <span><span class="dot base"></span><b>Centre</b> = Base (AZERTY)</span>
-      <span><span class="dot c1"></span>Bas-droit = <b>1</b> (accents / chiffres avec Maj)</span>
-      <span><span class="dot c2"></span>Haut-gauche = <b>2</b> (AltGr : symboles de code)</span>
-      <span><span class="dot c3"></span>Haut-droit = <b>3</b> (pavé num., navigation)</span>
-      <span><span class="dot c4"></span>Bas-gauche = <b>4</b> (F1-F12, média — le tiroir à trucs rares)</span>
+      <span><span class="dot c1"></span>Bas-droit = couche <b>1</b> seule (accent) — +Maj = chiffre, automatique</span>
+      <span><span class="dot c1alt"></span>Haut-gauche = couche <b>1</b> + AltGr (symbole de code)</span>
+      <span><span class="dot c2"></span>Haut-droit = couche <b>2</b> (navigation / pavé numérique)</span>
+      <span><span class="dot c3"></span>Bas-gauche = couche <b>3</b> (F1-F12, média)</span>
     </div>
   </div>
 
   <div class="board" id="board"></div>
 
   <footer class="notes">
-    <div class="note"><b>Accès direct.</b> Maintenir <b>1</b> (pouce droit) ou <b>2</b> (pouce gauche) — repères violets sur le schéma.</div>
-    <div class="note"><span class="swatch" style="background:var(--accent-nest)"></span><b>Accès imbriqué, symétrique.</b> Maintenir 2 puis appuyer en plus sur 1 → couche 3. Maintenir 1 puis appuyer en plus sur 2 → couche 4.</div>
-    <div class="note"><b>Touches mortes (·).</b> <span style="color:var(--accent-2);font-family:'JetBrains Mono',monospace">`</span> et <span style="color:var(--accent-2);font-family:'JetBrains Mono',monospace">^</span> (coin couche 2, marquées d'un point) se combinent avec la touche suivante — ex. <b>^</b> puis <b>E</b> donne <b>ê</b>.</div>
-    <div class="note"><b>Maj automatique.</b> Sur les touches de ponctuation Base ( , ; : ! ), maintenir Maj donne respectivement ? . / § — ça marche tout seul, ce n'est pas une couche, donc pas indiqué sur le schéma. Le <b>*</b> de la couche 3 est le vrai astérisque ASCII (pavé numérique), pas le symbole ×.</div>
+    <div class="note"><b>Accès direct.</b> Maintenir <b>1</b> (pouce droit) ou <b>2</b> (pouce gauche) — repère violet sur le schéma pour le pouce "2".</div>
+    <div class="note"><span class="swatch" style="background:var(--accent-nest)"></span><b>Accès imbriqué.</b> En maintenant 1, le pouce qui ouvre normalement 2 (Navigation) ouvre à la place la couche 3 (F-keys/média).</div>
+    <div class="note"><b>3 niveaux, 1 seule touche.</b> Sur la rangée du haut de la couche 1 : rien = accent, + Maj = chiffre, + AltGr = symbole. Les trois sont de vraies touches physiques combinées par l'OS, rien n'est codé "en dur" pour ça.</div>
+    <div class="note"><b>Touches mortes (·).</b> <span style="color:var(--accent-1alt);font-family:'JetBrains Mono',monospace">`</span> et <span style="color:var(--accent-1alt);font-family:'JetBrains Mono',monospace">^</span> se combinent avec la touche suivante — ex. <b>^</b> puis <b>E</b> donne <b>ê</b>. Le <b>*</b> de la couche 2 est le vrai astérisque ASCII (pavé numérique), pas le symbole ×.</div>
   </footer>
 </div>
 
 <script>
 (function(){
-  // [base, tl="2", tr="3", br="1", bl="4", kind, deadKey?, nestLabel?]
+  // [base, tl="1"+AltGr, tr="2", br="1" seule, bl="3", kind, deadKey?, nestLabel?]
   var K = [
-    ["Échap","","","","",'mod'],
-    ["A","~","7","&","F1",'letter'],
-    ["Z","#","8","é","F2",'letter'],
-    ["E","{","9","\"","F3",'letter'],
-    ["R","[","/","'","F4",'letter'],
-    ["T","|","*","(","F5",'letter'],
-    ["Y","`","Home","-","F6",'letter',true],
-    ["U","\\","↑","è","F7",'letter'],
-    ["I","^","Fin","_","F8",'letter',true],
-    ["O","@","PgUp","ç","F9",'letter'],
-    ["P","]","","à","F10",'letter'],
-    ["⌫","}","",")","",'mod'],
+    ["Échap","","Home","","",'mod'],
+    ["A","","↑","&","F1",'letter'],
+    ["Z","~","Fin","é","F2",'letter'],
+    ["E","#","PgUp","\"","F3",'letter'],
+    ["R","{","","'","F4",'letter'],
+    ["T","[","⌫","(","F5",'letter'],
+    ["Y","|","","-","F6",'letter'],
+    ["U","`","7","è","F7",'letter',true],
+    ["I","\\","8","_","F8",'letter'],
+    ["O","^","9","ç","F9",'letter',true],
+    ["P","@","/","à","F10",'letter'],
+    ["⌫","]","*",")","",'mod'],
 
-    ["Tab","","","","",'mod'],
-    ["Q","=","4","","F11",'letter'],
-    ["S","","5","","F12",'letter'],
-    ["D","","6","","",'letter'],
-    ["F","","-","","",'letter'],
-    ["G","","+","","",'letter'],
-    ["H","€","←","","Vol−",'letter'],
-    ["J","","↓","←","Vol+",'letter'],
-    ["K","","→","↓","⏯",'letter'],
-    ["L","","PgDn","↑","⏮",'letter'],
-    ["M","","Ins","→","⏭",'letter'],
-    ["⏎","","Suppr","","",'mod'],
+    ["Tab","","←","","",'mod'],
+    ["Q","}","↓","=","F11",'letter'],
+    ["S","","→","","F12",'letter'],
+    ["D","","PgDn","","",'letter'],
+    ["F","","Ins","","",'letter'],
+    ["G","","Suppr","","",'letter'],
+    ["H","","","€","Vol−",'letter'],
+    ["J","","4","←","Vol+",'letter'],
+    ["K","","5","↓","⏯",'letter'],
+    ["L","","6","↑","⏮",'letter'],
+    ["M","","-","→","⏭",'letter'],
+    ["⏎","","+","","",'mod'],
 
     ["Maj","","","","",'mod'],
-    ["W","ù","1","BT✕","",'letter'],
-    ["X","$","2","BT1","",'letter'],
-    ["C","%","3","BT2","",'letter'],
-    ["V","<","0","BT3","",'letter'],
-    ["B",">",".","","",'letter'],
-    ["N","","","","",'letter'],
-    [",","","","","",'letter'],
-    [";","","","","",'letter'],
-    [":","","","","",'letter'],
-    ["!","","","","",'letter'],
-    ["Maj","","","","",'mod'],
+    ["W","","","BT✕","",'letter'],
+    ["X","","","BT1","",'letter'],
+    ["C","","","BT2","",'letter'],
+    ["V","","","BT3","",'letter'],
+    ["B","$","","ù","",'letter'],
+    ["N","","","$","",'letter'],
+    [",","","1","%","",'letter'],
+    [";","","2","<","",'letter'],
+    [":","","3",">","",'letter'],
+    ["!","","0","","",'letter'],
+    ["Maj","",".","","",'mod'],
 
     ["Ctrl","","","","",'mod'],
     ["Win","","","","",'mod'],
     ["Espace","","","","",'mod'],
-    ["2","","","","",'mod',false,"→4"],
+    ["2","","","","",'mod',false,"→3"],
     ["AltGr","","","","",'mod'],
-    ["1","","","","",'mod',false,"→3"],
+    ["1","","","","",'mod'],
   ];
 
   function makeKey(d, colIdx, thumb){
