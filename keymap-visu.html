@@ -1,5 +1,5 @@
 <title>Plan de touches Corne42</title>
-<meta name="description" content="Référence visuelle des 42 touches et de leurs 3 couches (Base, 1, 2, 3)">
+<meta name="description" content="Référence visuelle des 42 touches et de leurs 2 couches (Base, 1, 2)">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <style>
@@ -13,8 +13,6 @@
     --accent-1:#a3701f;
     --accent-1alt:#b1483a;
     --accent-2:#1f7a68;
-    --accent-3:#6b6f8a;
-    --accent-nest:#5b4b9c;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
@@ -27,8 +25,6 @@
       --accent-1:#d9a24e;
       --accent-1alt:#e0776a;
       --accent-2:#4fbfa6;
-      --accent-3:#9ea3c4;
-      --accent-nest:#9b8ce0;
     }
   }
   :root[data-theme="dark"]{
@@ -41,8 +37,6 @@
     --accent-1:#d9a24e;
     --accent-1alt:#e0776a;
     --accent-2:#4fbfa6;
-    --accent-3:#9ea3c4;
-    --accent-nest:#9b8ce0;
   }
 
   body{ background:var(--paper); color:var(--ink); font-family:"IBM Plex Sans", system-ui, sans-serif; }
@@ -69,7 +63,6 @@
   .legend .diagram .tl{ top:.15rem; left:.25rem; color:var(--accent-1alt); }
   .legend .diagram .tr{ top:.15rem; right:.25rem; color:var(--accent-2); }
   .legend .diagram .br{ bottom:.15rem; right:.25rem; color:var(--accent-1); }
-  .legend .diagram .bl{ bottom:.15rem; left:.25rem; color:var(--accent-3); }
   .legend-items{ display:flex; flex-wrap:wrap; gap:.5rem 1.3rem; align-items:center; font-size:.82rem; }
   .legend-items span{ display:flex; align-items:center; gap:.4rem; white-space:nowrap; }
   .dot{ width:.55rem; height:.55rem; border-radius:50%; flex:none; }
@@ -77,7 +70,6 @@
   .dot.c1{ background:var(--accent-1); }
   .dot.c1alt{ background:var(--accent-1alt); }
   .dot.c2{ background:var(--accent-2); }
-  .dot.c3{ background:var(--accent-3); }
 
   .board{ display:flex; flex-direction:column; gap:.5rem; align-items:center; margin-bottom:1.6rem; }
   .row{ display:flex; gap:2.4rem; }
@@ -110,9 +102,7 @@
   .key .tl{ top:.26rem; left:.3rem; color:var(--accent-1alt); }
   .key .tr{ top:.26rem; right:.3rem; color:var(--accent-2); }
   .key .br{ bottom:.26rem; right:.3rem; color:var(--accent-1); }
-  .key .bl{ bottom:.26rem; left:.3rem; color:var(--accent-3); }
   .key .dead::after{ content:"\00B7"; }
-  .key .nest{ position:absolute; top:.3rem; left:0; right:0; text-align:center; color:var(--accent-nest); font-size:.58rem; font-weight:700; }
 
   .thumbkey{ width:3.6rem; height:2.9rem; }
 
@@ -126,7 +116,6 @@
     padding:.85rem .95rem; font-size:.82rem; line-height:1.5; color:var(--ink-dim);
   }
   footer.notes .note b{ color:var(--ink); }
-  footer.notes .note .swatch{ display:inline-block; width:.55rem; height:.55rem; border-radius:50%; margin-right:.35rem; vertical-align:middle; }
 
   @media (max-width:640px){
     .row{ gap:1.1rem; }
@@ -140,105 +129,95 @@
 <div class="wrap">
   <header>
     <p class="eyebrow">corne42 · config/corne.keymap</p>
-    <h1>Plan de touches — 3 couches, 4 niveaux par touche</h1>
-    <p>La couche <b>1</b> est fusionnée : chaque touche de la rangée du haut a 3 niveaux, comme un vrai clavier AZERTY (rien / +Maj / +AltGr). Le gros caractère au centre est la Base ; les quatre coins montrent les autres niveaux, quand ça change.</p>
+    <h1>Plan de touches — 2 couches seulement</h1>
+    <p>Plus que 2 couches à tenir : <b>1</b> (accents/chiffres/AltGr fusionnés + flèches + Bluetooth) et <b>2</b> (F1-F12/média à gauche, pavé numérique à droite). Le gros caractère au centre est la Base ; les coins montrent ce qui change sur 1 et 2.</p>
   </header>
 
   <div class="legend">
     <div class="diagram">
-      <i class="tl">~</i><i class="tr">↑</i><b>A</b><i class="bl">F1</i><i class="br">&amp;</i>
+      <i class="tl">~</i><i class="tr">F2</i><b>A</b><i class="br">&amp;</i>
     </div>
     <div class="legend-items">
       <span><span class="dot base"></span><b>Centre</b> = Base (AZERTY)</span>
       <span><span class="dot c1"></span>Bas-droit = couche <b>1</b> seule (accent) — +Maj = chiffre, automatique</span>
       <span><span class="dot c1alt"></span>Haut-gauche = couche <b>1</b> + AltGr (symbole de code)</span>
-      <span><span class="dot c2"></span>Haut-droit = couche <b>2</b> (navigation / pavé numérique)</span>
-      <span><span class="dot c3"></span>Bas-gauche = couche <b>3</b> (F1-F12, média)</span>
+      <span><span class="dot c2"></span>Haut-droit = couche <b>2</b> (F-keys/média à gauche, pavé numérique à droite)</span>
     </div>
   </div>
 
   <div class="board" id="board"></div>
 
   <footer class="notes">
-    <div class="note"><b>Accès direct.</b> Maintenir <b>1</b> (pouce droit) ou <b>2</b> (pouce gauche) — repère violet sur le schéma pour le pouce "2".</div>
-    <div class="note"><span class="swatch" style="background:var(--accent-nest)"></span><b>Accès imbriqué.</b> En maintenant 1, le pouce qui ouvre normalement 2 (Navigation) ouvre à la place la couche 3 (F-keys/média).</div>
-    <div class="note"><b>3 niveaux, 1 seule touche.</b> Sur la rangée du haut de la couche 1 : rien = accent, + Maj = chiffre, + AltGr = symbole. Les trois sont de vraies touches physiques combinées par l'OS, rien n'est codé "en dur" pour ça.</div>
-    <div class="note"><b>Flèches.</b> Un seul emplacement, sur la couche 1 : S = haut, W/X/C = gauche/bas/droite (T inversé). La couche 2 ne les a plus, pour éviter le doublon.</div>
-    <div class="note"><b>Touches mortes (·).</b> <span style="color:var(--accent-1alt);font-family:'JetBrains Mono',monospace">`</span> et <span style="color:var(--accent-1alt);font-family:'JetBrains Mono',monospace">^</span> se combinent avec la touche suivante — ex. <b>^</b> puis <b>E</b> donne <b>ê</b>. Le <b>*</b> de la couche 2 est le vrai astérisque ASCII (pavé numérique), pas le symbole ×.</div>
+    <div class="note"><b>Accès direct.</b> Maintenir <b>1</b> (pouce droit) ou <b>2</b> (pouce gauche) — plus de couche imbriquée, tout est à un seul maintien.</div>
+    <div class="note"><b>3 niveaux, 1 seule touche.</b> Rangée du haut de la couche 1 : rien = accent, + Maj = chiffre, + AltGr = symbole. Trois vraies touches physiques combinées par l'OS.</div>
+    <div class="note"><b>Flèches.</b> S = haut, W/X/C = gauche/bas/droite (T inversé), sur la couche 1 uniquement.</div>
+    <div class="note"><b>Touches mortes (·).</b> <span style="color:var(--accent-1alt);font-family:'JetBrains Mono',monospace">`</span> et <span style="color:var(--accent-1alt);font-family:'JetBrains Mono',monospace">^</span> se combinent avec la touche suivante (ex. <b>^</b>+<b>E</b>=<b>ê</b>). Le <b>*</b> couche 2 est le vrai astérisque ASCII, pas ×.</div>
   </footer>
 </div>
 
 <script>
 (function(){
-  // [base, tl="1"+AltGr, tr="2", br="1" seule, bl="3", kind, deadKey?, nestLabel?]
+  // [base, tl="1"+AltGr, tr="2", br="1" seule, kind, deadKey?]
   var K = [
-    ["Échap","","Home","","",'mod'],
-    ["A","","","&","F1",'letter'],
-    ["Z","~","Fin","é","F2",'letter'],
-    ["E","#","PgUp","\"","F3",'letter'],
-    ["R","{","","'","F4",'letter'],
-    ["T","[","⌫","(","F5",'letter'],
-    ["Y","|","","-","F6",'letter'],
-    ["U","`","7","è","F7",'letter',true],
-    ["I","\\","8","_","F8",'letter'],
-    ["O","^","9","ç","F9",'letter',true],
-    ["P","@","/","à","F10",'letter'],
-    ["⌫","]","*",")","",'mod'],
+    ["Échap","","F1","",'mod'],
+    ["A","","F2","&",'letter'],
+    ["Z","~","F3","é",'letter'],
+    ["E","#","F4","\"",'letter'],
+    ["R","{","F5","'",'letter'],
+    ["T","[","F6","(",'letter'],
+    ["Y","|","","-",'letter'],
+    ["U","`","7","è",'letter',true],
+    ["I","\\","8","_",'letter'],
+    ["O","^","9","ç",'letter',true],
+    ["P","@","/","à",'letter'],
+    ["⌫","]","*",")",'mod'],
 
-    ["Tab","","","","",'mod'],
-    ["Q","}","","=","F11",'letter'],
-    ["S","","","↑","F12",'letter'],
-    ["D","","PgDn","BT✕","",'letter'],
-    ["F","","Ins","BT1","",'letter'],
-    ["G","","Suppr","BT2","",'letter'],
-    ["H","","","€","Vol−",'letter'],
-    ["J","","4","←","Vol+",'letter'],
-    ["K","","5","↓","⏯",'letter'],
-    ["L","","6","↑","⏮",'letter'],
-    ["M","","-","→","⏭",'letter'],
-    ["⏎","","+","","",'mod'],
+    ["Tab","","F7","",'mod'],
+    ["Q","}","F8","=",'letter'],
+    ["S","","F9","↑",'letter'],
+    ["D","","F10","BT✕",'letter'],
+    ["F","","F11","BT1",'letter'],
+    ["G","","F12","BT2",'letter'],
+    ["H","","","€",'letter'],
+    ["J","","4","",'letter'],
+    ["K","","5","",'letter'],
+    ["L","","6","",'letter'],
+    ["M","","-","",'letter'],
+    ["⏎","","+","",'mod'],
 
-    ["Maj","","","","",'mod'],
-    ["W","","","←","",'letter'],
-    ["X","","","↓","",'letter'],
-    ["C","","","→","",'letter'],
-    ["V","","","BT3","",'letter'],
-    ["B","$","","ù","",'letter'],
-    ["N","","","$","",'letter'],
-    [",","","1","%","",'letter'],
-    [";","","2","<","",'letter'],
-    [":","","3",">","",'letter'],
-    ["!","","0","","",'letter'],
-    ["Maj","",".","","",'mod'],
+    ["Maj","","Vol−","",'mod'],
+    ["W","","Vol+","←",'letter'],
+    ["X","","⏯","↓",'letter'],
+    ["C","","⏮","→",'letter'],
+    ["V","","⏭","",'letter'],
+    ["B","$","","ù",'letter'],
+    ["N","","","$",'letter'],
+    [",","","1","%",'letter'],
+    [";","","2","<",'letter'],
+    [":","","3",">",'letter'],
+    ["!","","0","",'letter'],
+    ["Maj","",".","",'mod'],
 
-    ["Ctrl","","","","",'mod'],
-    ["Win","","","","",'mod'],
-    ["Espace","","","","",'mod'],
-    ["2","","","","",'mod',false,"→3"],
-    ["AltGr","","","","",'mod'],
-    ["1","","","","",'mod'],
+    ["Ctrl","","","",'mod'],
+    ["Win","","","",'mod'],
+    ["Espace","","","",'mod'],
+    ["2","","","",'mod'],
+    ["AltGr","","","",'mod'],
+    ["1","","","",'mod'],
   ];
 
   function makeKey(d, colIdx, thumb){
     var el = document.createElement('div');
-    el.className = 'key' + (d[5]==='mod' ? ' mod' : '') + (thumb ? ' thumbkey' : '') + ' col-' + colIdx;
+    el.className = 'key' + (d[4]==='mod' ? ' mod' : '') + (thumb ? ' thumbkey' : '') + ' col-' + colIdx;
 
     var base = document.createElement('div');
     base.className='base';
     base.textContent = d[0];
     el.appendChild(base);
 
-    if(d[7]){
-      var nest = document.createElement('div');
-      nest.className='nest';
-      nest.textContent = d[7];
-      el.appendChild(nest);
-    } else {
-      if(d[1]){ var tl=document.createElement('div'); tl.className='corner tl'+(d[6]?' dead':''); tl.textContent=d[1]; el.appendChild(tl); }
-      if(d[2]){ var tr=document.createElement('div'); tr.className='corner tr'; tr.textContent=d[2]; el.appendChild(tr); }
-      if(d[3]){ var br=document.createElement('div'); br.className='corner br'; br.textContent=d[3]; el.appendChild(br); }
-      if(d[4]){ var bl=document.createElement('div'); bl.className='corner bl'; bl.textContent=d[4]; el.appendChild(bl); }
-    }
+    if(d[1]){ var tl=document.createElement('div'); tl.className='corner tl'+(d[5]?' dead':''); tl.textContent=d[1]; el.appendChild(tl); }
+    if(d[2]){ var tr=document.createElement('div'); tr.className='corner tr'; tr.textContent=d[2]; el.appendChild(tr); }
+    if(d[3]){ var br=document.createElement('div'); br.className='corner br'; br.textContent=d[3]; el.appendChild(br); }
     return el;
   }
 

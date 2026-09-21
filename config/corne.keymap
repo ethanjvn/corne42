@@ -24,7 +24,6 @@
             //                      | CTRL| WIN | ESPACE|   |  2  | ALT |  1   |
             // Avec Maj : , devient ?, ; devient ., : devient /, ! devient §
             // (comme sur un vrai clavier AZERTY), rien à configurer en plus.
-            // Maintenir 1, puis appuyer aussi sur 2 (sans relâcher) = couche 3.
 
             display-name = "Base";
             bindings = <
@@ -45,66 +44,44 @@
             //     -> symbole de code (~ # { [ | ` \ ^ @ ] })
             // Les 3 modificateurs sont de vraies touches HID, ZMK ne fait que
             // les transmettre : rien à coder de plus pour que ça marche.
-            //
-            // Astuce : en maintenant cette couche (1), le pouce gauche qui
-            // ouvre normalement la couche 2 (Navigation) ouvre ici la
-            // couche 3 (F-keys/média) à la place.
             // -----------------------------------------------------------------------------------------
             // |      |  &  |  é  |  "  |  '  |  (  |   |  -  |  è  |  _  |  ç  |  à  |  )   |
             // (Maj)  |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |      |
             // (AltGr)|  ~  |  #  |  {  |  [  |  |  |   |  `  |  \  |  ^  |  @  |  ]  |  }   |
-            // |      | HAUT|BTCLR|BT1  | BT2 |     |   |  €  |     |     |     |     |      |
-            // |      |GCHE | BAS |DRTE | BT3 |  ù  |   |  $  |  %  |  <  |  >  |     |      |
-            //                    | CTRL|     | ESPACE|  |  3  |     |      |
+            // |      | HAUT|BTCLR|BT1  |     |     |   |  €  |     |     |     |     |      |
+            // |      |GCHE | BAS |DRTE |     |  ù  |   |  $  |  %  |  <  |  >  |     |      |
+            //                    | CTRL|     | ESPACE|  |  2  |     |      |
             // Flèches sur S (haut) / W X C (gauche bas droite, en T inversé).
+            // Bluetooth réduit à 2 profils (BT_CLR + BT_SEL 0/1) : suffisant
+            // pour 2 appareils appairés max.
 
             display-name = "1";
             bindings = <
 &trans  &kp FR_AMPR  &kp FR_EACUTE  &kp FR_DQT    &kp FR_QUOT   &kp FR_LPAR    &kp FR_HYPHEN  &kp FR_EGRAVE  &kp FR_UNDER  &kp FR_CCEDIL  &kp FR_AGRAVE  &kp FR_RPAR
 &trans  &kp FR_EQUAL &kp UP_ARROW   &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1   &kp FR_EURO    &trans         &trans        &trans         &trans         &trans
-&trans  &kp LEFT     &kp DOWN       &kp RIGHT     &bt BT_SEL 2  &kp FR_UGRAVE  &kp FR_DOLLAR  &kp FR_PERCENT &kp FR_LT     &kp FR_GT      &trans         &trans
-                                    &trans        &trans        &trans         &mo 3          &trans        &trans
+&trans  &kp LEFT     &kp DOWN       &kp RIGHT     &trans        &kp FR_UGRAVE  &kp FR_DOLLAR  &kp FR_PERCENT &kp FR_LT     &kp FR_GT      &trans         &trans
+                                    &trans        &trans        &trans         &trans         &trans        &trans
             >;
         };
 
         nav_layer {
-            // Navigation à gauche (flèches en T inversé + pages) / pavé
-            // numérique à droite. Les touches KP_xxx sont un vrai pavé
+            // Clavier gauche = F1-F12 + contrôles média. Clavier droit =
+            // pavé numérique. Les touches KP_xxx sont un vrai pavé
             // numérique matériel : elles tapent toujours un chiffre quel que
             // soit le layout clavier réglé sur l'ordinateur.
             // -----------------------------------------------------------------------------------------
-            // |      |HOME |     | END |PGUP |     |   |     |  7  |  8  |  9  |  /  |  *   |
-            // |      |     |     |     |PGDN | INS |   |     |  4  |  5  |  6  |  -  |  +   |
-            // |      |     |     |     |     |     |   |     |  1  |  2  |  3  |  0  |  .   |
-            // Flèches retirées d'ici : elles ne sont que sur la couche 1
-            // (S/W/X/C), pour éviter le doublon.
+            // |  F1 |  F2 |  F3 |  F4 |  F5 |  F6 |   |     |  7  |  8  |  9  |  /  |  *   |
+            // |  F7 |  F8 |  F9 | F10 | F11 | F12 |   |     |  4  |  5  |  6  |  -  |  +   |
+            // |VOL- |VOL+ | ⏯  | ⏮  | ⏭  |     |   |     |  1  |  2  |  3  |  0  |  .   |
             // Le * ci-dessus est le vrai astérisque ASCII (touche pavé
             // numérique), pas le symbole × — important si tu codes.
 
             display-name = "2";
             bindings = <
-&kp HOME  &trans        &kp END    &kp PG_UP  &trans      &kp BACKSPACE      &trans  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_SLASH  &kp KP_MULTIPLY
-&trans    &trans        &trans     &kp PG_DN  &kp INSERT  &kp DELETE         &trans  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp KP_PLUS
-&trans    &trans        &trans     &trans     &trans      &trans             &trans  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0     &kp KP_DOT
-                                    &trans     &trans      &trans             &trans  &trans      &trans
-            >;
-        };
-
-        fn_layer {
-            // Tout ce qui sert rarement, regroupé ici : F1-F12 + contrôles
-            // média. Accès : maintenir 1, puis appuyer aussi sur 2 sans
-            // relâcher 1.
-            // -----------------------------------------------------------------------------------------
-            // |      |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 |      |
-            // |      | F11 | F12 |     |     |     |   |VOL- |VOL+ | ⏯  | ⏮  | ⏭  |      |
-            // |      |     |     |     |     |     |   |     |     |     |     |     |      |
-
-            display-name = "3";
-            bindings = <
-&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5       &kp F6        &kp F7        &kp F8    &kp F9      &kp F10  &trans
-&trans  &kp F11  &kp F12  &trans   &trans   &trans       &kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP  &kp C_PREV  &kp C_NEXT  &trans
-&trans  &trans   &trans   &trans   &trans   &trans       &trans        &trans        &trans    &trans      &trans   &trans
-                          &trans   &trans   &trans       &trans        &trans        &trans
+&kp F1        &kp F2        &kp F3    &kp F4      &kp F5      &kp F6             &trans  &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_SLASH  &kp KP_MULTIPLY
+&kp F7        &kp F8        &kp F9    &kp F10     &kp F11     &kp F12            &trans  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_MINUS  &kp KP_PLUS
+&kp C_VOL_DN  &kp C_VOL_UP  &kp C_PP  &kp C_PREV  &kp C_NEXT  &trans             &trans  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0     &kp KP_DOT
+                                      &trans      &trans      &trans             &trans  &trans      &trans
             >;
         };
     };
