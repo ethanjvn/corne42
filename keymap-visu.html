@@ -1,5 +1,5 @@
 <title>Plan de touches Corne42</title>
-<meta name="description" content="Référence visuelle des 42 touches et de leurs 4 couches (Base, Chiffres, Symboles, Navigation)">
+<meta name="description" content="Référence visuelle des 42 touches et de leurs 5 couches (Base, 1, 2, 3, 4)">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 <style>
@@ -10,11 +10,11 @@
     --key-face:#ffffff;
     --key-edge:#d7d2c8;
     --key-shadow:rgba(30,35,32,0.10);
-    --accent-chiffres:#a3701f;
-    --accent-symboles:#b1483a;
-    --accent-nav:#1f7a68;
+    --accent-1:#a3701f;
+    --accent-2:#b1483a;
+    --accent-3:#1f7a68;
+    --accent-4:#6b6f8a;
     --accent-nest:#5b4b9c;
-    --canyon:2.4rem;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
@@ -24,9 +24,10 @@
       --key-face:#20262a;
       --key-edge:#333c3f;
       --key-shadow:rgba(0,0,0,0.45);
-      --accent-chiffres:#d9a24e;
-      --accent-symboles:#e0776a;
-      --accent-nav:#4fbfa6;
+      --accent-1:#d9a24e;
+      --accent-2:#e0776a;
+      --accent-3:#4fbfa6;
+      --accent-4:#9ea3c4;
       --accent-nest:#9b8ce0;
     }
   }
@@ -37,9 +38,10 @@
     --key-face:#20262a;
     --key-edge:#333c3f;
     --key-shadow:rgba(0,0,0,0.45);
-    --accent-chiffres:#d9a24e;
-    --accent-symboles:#e0776a;
-    --accent-nav:#4fbfa6;
+    --accent-1:#d9a24e;
+    --accent-2:#e0776a;
+    --accent-3:#4fbfa6;
+    --accent-4:#9ea3c4;
     --accent-nest:#9b8ce0;
   }
 
@@ -60,30 +62,31 @@
     background:var(--key-face); border:1px solid var(--key-edge); border-radius:.7rem;
   }
   .legend .diagram{
-    position:relative; width:3.4rem; height:3.1rem; flex:none;
+    position:relative; width:3.4rem; height:3.4rem; flex:none;
     background:var(--paper); border:1px solid var(--key-edge); border-radius:.4rem;
   }
   .legend .diagram b{ position:absolute; font-family:"JetBrains Mono",monospace; font-weight:700; font-size:1.05rem; inset:0; display:flex; align-items:center; justify-content:center; }
   .legend .diagram i{ position:absolute; font-style:normal; font-size:.5rem; font-weight:600; }
-  .legend .diagram .tl{ top:.15rem; left:.25rem; color:var(--accent-symboles); }
-  .legend .diagram .tr{ top:.15rem; right:.25rem; color:var(--accent-nav); }
-  .legend .diagram .br{ bottom:.15rem; right:.25rem; color:var(--accent-chiffres); }
+  .legend .diagram .tl{ top:.15rem; left:.25rem; color:var(--accent-2); }
+  .legend .diagram .tr{ top:.15rem; right:.25rem; color:var(--accent-3); }
+  .legend .diagram .br{ bottom:.15rem; right:.25rem; color:var(--accent-1); }
+  .legend .diagram .bl{ bottom:.15rem; left:.25rem; color:var(--accent-4); }
   .legend-items{ display:flex; flex-wrap:wrap; gap:.5rem 1.3rem; align-items:center; font-size:.82rem; }
   .legend-items span{ display:flex; align-items:center; gap:.4rem; white-space:nowrap; }
   .dot{ width:.55rem; height:.55rem; border-radius:50%; flex:none; }
   .dot.base{ background:var(--ink); }
-  .dot.chiffres{ background:var(--accent-chiffres); }
-  .dot.symboles{ background:var(--accent-symboles); }
-  .dot.nav{ background:var(--accent-nav); }
+  .dot.c1{ background:var(--accent-1); }
+  .dot.c2{ background:var(--accent-2); }
+  .dot.c3{ background:var(--accent-3); }
+  .dot.c4{ background:var(--accent-4); }
 
   /* board */
   .board{ display:flex; flex-direction:column; gap:.5rem; align-items:center; margin-bottom:1.6rem; }
-  .row{ display:flex; gap: var(--canyon); }
+  .row{ display:flex; gap:2.4rem; }
   .hand{ display:flex; gap:.4rem; }
   .row.thumbs{ margin-top:.3rem; }
   .row.thumbs .hand{ gap:.4rem; }
 
-  /* stagger, façon Corne : colonne du milieu plus haute */
   .col-0{ transform:translateY(.5rem); }
   .col-1{ transform:translateY(.15rem); }
   .col-2{ transform:translateY(-.15rem); }
@@ -105,12 +108,13 @@
     font-family:"JetBrains Mono", monospace; font-weight:700; font-size:1.05rem;
   }
   .key.mod .base{ font-family:"IBM Plex Sans",sans-serif; font-weight:600; font-size:.62rem; padding:.2rem; text-align:center; line-height:1.15; }
-  .key .corner{ position:absolute; font-family:"JetBrains Mono",monospace; font-weight:600; font-size:.56rem; line-height:1; }
-  .key .tl{ top:.28rem; left:.32rem; color:var(--accent-symboles); }
-  .key .tr{ top:.28rem; right:.32rem; color:var(--accent-nav); }
-  .key .br{ bottom:.28rem; right:.32rem; color:var(--accent-chiffres); }
+  .key .corner{ position:absolute; font-family:"JetBrains Mono",monospace; font-weight:600; font-size:.54rem; line-height:1; }
+  .key .tl{ top:.26rem; left:.3rem; color:var(--accent-2); }
+  .key .tr{ top:.26rem; right:.3rem; color:var(--accent-3); }
+  .key .br{ bottom:.26rem; right:.3rem; color:var(--accent-1); }
+  .key .bl{ bottom:.26rem; left:.3rem; color:var(--accent-4); }
   .key .dead::after{ content:"\00B7"; }
-  .key .nest{ position:absolute; top:.28rem; left:.32rem; color:var(--accent-nest); font-size:.5rem; font-weight:700; }
+  .key .nest{ position:absolute; top:.3rem; left:0; right:0; text-align:center; color:var(--accent-nest); font-size:.58rem; font-weight:700; }
 
   .thumbkey{ width:3.6rem; height:2.9rem; }
 
@@ -127,7 +131,7 @@
   footer.notes .note .swatch{ display:inline-block; width:.55rem; height:.55rem; border-radius:50%; margin-right:.35rem; vertical-align:middle; }
 
   @media (max-width:640px){
-    :root{ --canyon:1.1rem; }
+    .row{ gap:1.1rem; }
     .key{ width:2.85rem; height:2.85rem; }
     .thumbkey{ width:2.85rem; height:2.3rem; }
     .key .base{ font-size:.85rem; }
@@ -138,107 +142,103 @@
 <div class="wrap">
   <header>
     <p class="eyebrow">corne42 · config/corne.keymap</p>
-    <h1>Plan de touches — 4 couches sur un keycap</h1>
-    <p>Chaque touche du schéma correspond à une position physique du clavier. Le gros caractère au centre est ce qu'elle tape en <b>Base</b> ; les trois coins montrent ce qu'elle devient sur les autres couches, quand ça change — sinon, pas de coin, ça veut dire "pareil qu'en Base".</p>
+    <h1>Plan de touches — 5 couches sur un keycap</h1>
+    <p>Chaque touche du schéma correspond à une position physique du clavier. Le gros caractère au centre est ce qu'elle tape en <b>Base</b> ; les quatre coins montrent ce qu'elle devient sur les couches 1 à 4, quand ça change — sinon, pas de coin, ça veut dire "pareil qu'en Base".</p>
   </header>
 
   <div class="legend">
     <div class="diagram">
-      <i class="tl">~</i><i class="tr">7</i><b>A</b><i class="br">&amp;</i>
+      <i class="tl">~</i><i class="tr">7</i><b>A</b><i class="bl">F1</i><i class="br">&amp;</i>
     </div>
     <div class="legend-items">
       <span><span class="dot base"></span><b>Centre</b> = Base (AZERTY)</span>
-      <span><span class="dot symboles"></span>Haut-gauche = Symboles (AltGr, F1-F12, média)</span>
-      <span><span class="dot nav"></span>Haut-droit = Navigation (pavé num., flèches, édition)</span>
-      <span><span class="dot chiffres"></span>Bas-droit = Chiffres (accents / chiffres avec Maj)</span>
+      <span><span class="dot c1"></span>Bas-droit = <b>1</b> (accents / chiffres avec Maj)</span>
+      <span><span class="dot c2"></span>Haut-gauche = <b>2</b> (AltGr : symboles de code)</span>
+      <span><span class="dot c3"></span>Haut-droit = <b>3</b> (pavé num., navigation)</span>
+      <span><span class="dot c4"></span>Bas-gauche = <b>4</b> (F1-F12, média — le tiroir à trucs rares)</span>
     </div>
   </div>
 
   <div class="board" id="board"></div>
 
   <footer class="notes">
-    <div class="note"><b>Accès aux couches.</b> Maintenir <b>LWR</b> (pouce gauche) → Chiffres. Maintenir <b>RSE</b> (pouce droit) → Symboles.</div>
-    <div class="note"><span class="swatch" style="background:var(--accent-nest)"></span><b>Couche imbriquée.</b> En maintenant RSE, appuyer en plus sur la touche LWR (repère violet "→NAV") ouvre la couche Navigation.</div>
-    <div class="note"><b>Touches mortes (·).</b> <span class="tl" style="color:var(--accent-symboles);font-family:'JetBrains Mono',monospace">` </span> et <span style="color:var(--accent-symboles);font-family:'JetBrains Mono',monospace">^</span> (coin Symboles, marquées d'un point) se combinent avec la touche suivante — ex. <b>^</b> puis <b>E</b> donne <b>ê</b>. Pour le symbole seul : la touche puis Espace.</div>
-    <div class="note"><b>Maj automatique.</b> Sur les touches de ponctuation Base ( , ; : ! ), maintenir Maj donne respectivement ? . / § — ce n'est pas une couche, ça marche tout seul, donc ce n'est pas indiqué sur le schéma.</div>
+    <div class="note"><b>Accès direct.</b> Maintenir <b>1</b> (pouce droit) ou <b>2</b> (pouce gauche) — repères violets sur le schéma.</div>
+    <div class="note"><span class="swatch" style="background:var(--accent-nest)"></span><b>Accès imbriqué, symétrique.</b> Maintenir 2 puis appuyer en plus sur 1 → couche 3. Maintenir 1 puis appuyer en plus sur 2 → couche 4.</div>
+    <div class="note"><b>Touches mortes (·).</b> <span style="color:var(--accent-2);font-family:'JetBrains Mono',monospace">`</span> et <span style="color:var(--accent-2);font-family:'JetBrains Mono',monospace">^</span> (coin couche 2, marquées d'un point) se combinent avec la touche suivante — ex. <b>^</b> puis <b>E</b> donne <b>ê</b>.</div>
+    <div class="note"><b>Maj automatique.</b> Sur les touches de ponctuation Base ( , ; : ! ), maintenir Maj donne respectivement ? . / § — ça marche tout seul, ce n'est pas une couche, donc pas indiqué sur le schéma. Le <b>*</b> de la couche 3 est le vrai astérisque ASCII (pavé numérique), pas le symbole ×.</div>
   </footer>
 </div>
 
 <script>
 (function(){
-  // [base, symboles(haut-gauche), navigation(haut-droit), chiffres(bas-droit), kind, deadKey?, nested?]
+  // [base, tl="2", tr="3", br="1", bl="4", kind, deadKey?, nestLabel?]
   var K = [
-    ["Échap","","","",'mod'],
-    ["A","~","7","&",'letter'],
-    ["Z","#","8","é",'letter'],
-    ["E","{","9","\"",'letter'],
-    ["R","[","/","'",'letter'],
-    ["T","|","*","(",'letter'],
-    ["Y","`","Home","-",'letter',true],
-    ["U","\\","↑","è",'letter'],
-    ["I","^","Fin","_",'letter',true],
-    ["O","@","PgUp","ç",'letter'],
-    ["P","]","","à",'letter'],
-    ["⌫","}","",")",'mod'],
+    ["Échap","","","","",'mod'],
+    ["A","~","7","&","F1",'letter'],
+    ["Z","#","8","é","F2",'letter'],
+    ["E","{","9","\"","F3",'letter'],
+    ["R","[","/","'","F4",'letter'],
+    ["T","|","*","(","F5",'letter'],
+    ["Y","`","Home","-","F6",'letter',true],
+    ["U","\\","↑","è","F7",'letter'],
+    ["I","^","Fin","_","F8",'letter',true],
+    ["O","@","PgUp","ç","F9",'letter'],
+    ["P","]","","à","F10",'letter'],
+    ["⌫","}","",")","",'mod'],
 
-    ["Tab","","","",'mod'],
-    ["Q","=","4","",'letter'],
-    ["S","F1","5","",'letter'],
-    ["D","F2","6","",'letter'],
-    ["F","F3","-","",'letter'],
-    ["G","F4","+","",'letter'],
-    ["H","€","←","",'letter'],
-    ["J","F5","↓","←",'letter'],
-    ["K","F6","→","↓",'letter'],
-    ["L","F7","PgDn","↑",'letter'],
-    ["M","F8","Ins","→",'letter'],
-    ["⏎","","","Suppr",'mod'],
+    ["Tab","","","","",'mod'],
+    ["Q","=","4","","F11",'letter'],
+    ["S","","5","","F12",'letter'],
+    ["D","","6","","",'letter'],
+    ["F","","-","","",'letter'],
+    ["G","","+","","",'letter'],
+    ["H","€","←","","Vol−",'letter'],
+    ["J","","↓","←","Vol+",'letter'],
+    ["K","","→","↓","⏯",'letter'],
+    ["L","","PgDn","↑","⏮",'letter'],
+    ["M","","Ins","→","⏭",'letter'],
+    ["⏎","","Suppr","","",'mod'],
 
-    ["Maj","","","",'mod'],
-    ["W","ù","1","BT✕",'letter'],
-    ["X","F9","2","BT1",'letter'],
-    ["C","F10","3","BT2",'letter'],
-    ["V","F11","0","BT3",'letter'],
-    ["B","F12",".","",'letter'],
-    ["N","$","Vol−","",'letter'],
-    [",","%","Vol+","",'letter'],
-    [";","<","⏯","",'letter'],
-    [":",">","⏮","",'letter'],
-    ["!","","⏭","",'letter'],
-    ["Maj","","","",'mod'],
+    ["Maj","","","","",'mod'],
+    ["W","ù","1","BT✕","",'letter'],
+    ["X","$","2","BT1","",'letter'],
+    ["C","%","3","BT2","",'letter'],
+    ["V","<","0","BT3","",'letter'],
+    ["B",">",".","","",'letter'],
+    ["N","","","","",'letter'],
+    [",","","","","",'letter'],
+    [";","","","","",'letter'],
+    [":","","","","",'letter'],
+    ["!","","","","",'letter'],
+    ["Maj","","","","",'mod'],
 
-    ["Ctrl","","","",'mod'],
-    ["LWR","→NAV","","",'mod',false,true],
-    ["Espace","","","",'mod'],
-    ["RSE","","","",'mod'],
-    ["AltGr","","","",'mod'],
-    ["Win","","","",'mod'],
+    ["Ctrl","","","","",'mod'],
+    ["Win","","","","",'mod'],
+    ["Espace","","","","",'mod'],
+    ["2","","","","",'mod',false,"→4"],
+    ["AltGr","","","","",'mod'],
+    ["1","","","","",'mod',false,"→3"],
   ];
 
   function makeKey(d, colIdx, thumb){
     var el = document.createElement('div');
-    el.className = 'key' + (d[4]==='mod' ? ' mod' : '') + (thumb ? ' thumbkey' : '') + ' col-' + colIdx;
+    el.className = 'key' + (d[5]==='mod' ? ' mod' : '') + (thumb ? ' thumbkey' : '') + ' col-' + colIdx;
 
     var base = document.createElement('div');
     base.className='base';
     base.textContent = d[0];
     el.appendChild(base);
 
-    if(d[6]){
+    if(d[7]){
       var nest = document.createElement('div');
       nest.className='nest';
-      nest.textContent = d[1];
+      nest.textContent = d[7];
       el.appendChild(nest);
     } else {
-      if(d[1]){
-        var tl=document.createElement('div'); tl.className='corner tl'+(d[5]?' dead':''); tl.textContent=d[1]; el.appendChild(tl);
-      }
-      if(d[2]){
-        var tr=document.createElement('div'); tr.className='corner tr'; tr.textContent=d[2]; el.appendChild(tr);
-      }
-      if(d[3]){
-        var br=document.createElement('div'); br.className='corner br'; br.textContent=d[3]; el.appendChild(br);
-      }
+      if(d[1]){ var tl=document.createElement('div'); tl.className='corner tl'+(d[6]?' dead':''); tl.textContent=d[1]; el.appendChild(tl); }
+      if(d[2]){ var tr=document.createElement('div'); tr.className='corner tr'; tr.textContent=d[2]; el.appendChild(tr); }
+      if(d[3]){ var br=document.createElement('div'); br.className='corner br'; br.textContent=d[3]; el.appendChild(br); }
+      if(d[4]){ var bl=document.createElement('div'); bl.className='corner bl'; bl.textContent=d[4]; el.appendChild(bl); }
     }
     return el;
   }
