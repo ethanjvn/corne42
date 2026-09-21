@@ -16,12 +16,12 @@ layers:
   - à
   - )
   - {t: ▽, type: trans}
+  - '='
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - €
   - LEFT
   - DOWN
   - UP ARROW
@@ -32,45 +32,6 @@ layers:
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '4'
-  - {t: ▽, type: trans}
-  - {type: held}
-  '2':
-  - {t: ▽, type: trans}
-  - '~'
-  - '#'
-  - '{'
-  - '['
-  - '|'
-  - '`'
-  - \
-  - ^
-  - '@'
-  - ']'
-  - '}'
-  - {t: ▽, type: trans}
-  - '='
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - €
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - ù
   - $
   - '%'
@@ -81,20 +42,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '3'
   - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
-  - '3'
-  '3':
-  - {t: ▽, type: trans}
-  - KP 7
-  - KP 8
-  - KP 9
-  - KP SLASH
-  - KP MULTIPLY
+  '2':
   - HOME
   - UP ARROW
   - END
@@ -102,17 +53,29 @@ layers:
   - {t: ▽, type: trans}
   - BACKSPACE
   - {t: ▽, type: trans}
-  - KP 4
-  - KP 5
-  - KP 6
-  - KP MINUS
-  - KP PLUS
+  - KP 7
+  - KP 8
+  - KP 9
+  - KP SLASH
+  - KP MULTIPLY
   - LEFT
   - DOWN
   - RIGHT
   - PG DN
   - INSERT
   - DELETE
+  - {t: ▽, type: trans}
+  - KP 4
+  - KP 5
+  - KP 6
+  - KP MINUS
+  - KP PLUS
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - KP 1
   - KP 2
@@ -122,16 +85,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
-  - {type: held}
-  '4':
+  - {t: ▽, type: trans}
+  '3':
   - {t: ▽, type: trans}
   - F1
   - F2
