@@ -15,6 +15,15 @@
 #define FR_W       Z
 #define FR_M       SEMICOLON
 
+// --- Touche "ù" (à côté du M) : sans Maj = ù, avec Maj = %, AltGr = $ ---
+#define FR_UGRAVE  APOSTROPHE
+#define FR_PERCENT LS(APOSTROPHE)
+#define FR_DOLLAR  RA(APOSTROPHE)
+
+// --- Touche ISO à gauche de Maj.G : sans Maj = <, avec Maj = > ---
+#define FR_LT      NON_US_BSLH
+#define FR_GT      LS(NON_US_BSLH)
+
 // --- Rangée du bas : virgule/point-virgule/deux-points/point d'exclamation ---
 // Sans Maj : , ; : !   |   Avec Maj : ? . / §
 #define FR_COMMA   M

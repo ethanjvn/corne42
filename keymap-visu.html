@@ -1,0 +1,268 @@
+<title>Plan de touches Corne42</title>
+<meta name="description" content="Référence visuelle des 42 touches et de leurs 4 couches (Base, Chiffres, Symboles, Navigation)">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --paper:#f4f2ee;
+    --ink:#1e2320;
+    --ink-dim:#5b6460;
+    --key-face:#ffffff;
+    --key-edge:#d7d2c8;
+    --key-shadow:rgba(30,35,32,0.10);
+    --accent-chiffres:#a3701f;
+    --accent-symboles:#b1483a;
+    --accent-nav:#1f7a68;
+    --accent-nest:#5b4b9c;
+    --canyon:2.4rem;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#15181a;
+      --ink:#eceae4;
+      --ink-dim:#9aa39d;
+      --key-face:#20262a;
+      --key-edge:#333c3f;
+      --key-shadow:rgba(0,0,0,0.45);
+      --accent-chiffres:#d9a24e;
+      --accent-symboles:#e0776a;
+      --accent-nav:#4fbfa6;
+      --accent-nest:#9b8ce0;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#15181a;
+    --ink:#eceae4;
+    --ink-dim:#9aa39d;
+    --key-face:#20262a;
+    --key-edge:#333c3f;
+    --key-shadow:rgba(0,0,0,0.45);
+    --accent-chiffres:#d9a24e;
+    --accent-symboles:#e0776a;
+    --accent-nav:#4fbfa6;
+    --accent-nest:#9b8ce0;
+  }
+
+  body{ background:var(--paper); color:var(--ink); font-family:"IBM Plex Sans", system-ui, sans-serif; }
+  * { box-sizing:border-box; }
+
+  .wrap{ max-width:76rem; margin:0 auto; padding-inline:1.1rem; padding-block: 2rem 3.5rem; }
+
+  header{ margin-bottom:1.6rem; }
+  .eyebrow{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-dim); font-weight:600; margin:0 0 .4rem; }
+  h1{ font-family:"JetBrains Mono", monospace; font-size:clamp(1.5rem,4vw,2.1rem); font-weight:700; margin:0 0 .5rem; text-wrap:balance; letter-spacing:-0.01em; }
+  header p{ color:var(--ink-dim); max-width:42rem; line-height:1.55; margin:0; font-size:.94rem; }
+
+  /* légende */
+  .legend{
+    display:flex; flex-wrap:wrap; gap:.55rem 1.1rem;
+    margin:1.4rem 0 2.2rem; padding:.9rem 1.1rem;
+    background:var(--key-face); border:1px solid var(--key-edge); border-radius:.7rem;
+  }
+  .legend .diagram{
+    position:relative; width:3.4rem; height:3.1rem; flex:none;
+    background:var(--paper); border:1px solid var(--key-edge); border-radius:.4rem;
+  }
+  .legend .diagram b{ position:absolute; font-family:"JetBrains Mono",monospace; font-weight:700; font-size:1.05rem; inset:0; display:flex; align-items:center; justify-content:center; }
+  .legend .diagram i{ position:absolute; font-style:normal; font-size:.5rem; font-weight:600; }
+  .legend .diagram .tl{ top:.15rem; left:.25rem; color:var(--accent-symboles); }
+  .legend .diagram .tr{ top:.15rem; right:.25rem; color:var(--accent-nav); }
+  .legend .diagram .br{ bottom:.15rem; right:.25rem; color:var(--accent-chiffres); }
+  .legend-items{ display:flex; flex-wrap:wrap; gap:.5rem 1.3rem; align-items:center; font-size:.82rem; }
+  .legend-items span{ display:flex; align-items:center; gap:.4rem; white-space:nowrap; }
+  .dot{ width:.55rem; height:.55rem; border-radius:50%; flex:none; }
+  .dot.base{ background:var(--ink); }
+  .dot.chiffres{ background:var(--accent-chiffres); }
+  .dot.symboles{ background:var(--accent-symboles); }
+  .dot.nav{ background:var(--accent-nav); }
+
+  /* board */
+  .board{ display:flex; flex-direction:column; gap:.5rem; align-items:center; margin-bottom:1.6rem; }
+  .row{ display:flex; gap: var(--canyon); }
+  .hand{ display:flex; gap:.4rem; }
+  .row.thumbs{ margin-top:.3rem; }
+  .row.thumbs .hand{ gap:.4rem; }
+
+  /* stagger, façon Corne : colonne du milieu plus haute */
+  .col-0{ transform:translateY(.5rem); }
+  .col-1{ transform:translateY(.15rem); }
+  .col-2{ transform:translateY(-.15rem); }
+  .col-3{ transform:translateY(-.15rem); }
+  .col-4{ transform:translateY(.1rem); }
+  .col-5{ transform:translateY(.4rem); }
+
+  .key{
+    position:relative;
+    width:3.6rem; height:3.6rem;
+    background:var(--key-face);
+    border:1px solid var(--key-edge);
+    border-radius:.55rem;
+    box-shadow: 0 2px 0 var(--key-shadow);
+  }
+  .key.mod{ background:color-mix(in srgb, var(--key-face) 88%, var(--ink) 6%); }
+  .key .base{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:"JetBrains Mono", monospace; font-weight:700; font-size:1.05rem;
+  }
+  .key.mod .base{ font-family:"IBM Plex Sans",sans-serif; font-weight:600; font-size:.62rem; padding:.2rem; text-align:center; line-height:1.15; }
+  .key .corner{ position:absolute; font-family:"JetBrains Mono",monospace; font-weight:600; font-size:.56rem; line-height:1; }
+  .key .tl{ top:.28rem; left:.32rem; color:var(--accent-symboles); }
+  .key .tr{ top:.28rem; right:.32rem; color:var(--accent-nav); }
+  .key .br{ bottom:.28rem; right:.32rem; color:var(--accent-chiffres); }
+  .key .dead::after{ content:"\00B7"; }
+  .key .nest{ position:absolute; top:.28rem; left:.32rem; color:var(--accent-nest); font-size:.5rem; font-weight:700; }
+
+  .thumbkey{ width:3.6rem; height:2.9rem; }
+
+  footer.notes{
+    display:grid; gap:.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
+    margin-top:1.2rem;
+  }
+  footer.notes .note{
+    background:var(--key-face); border:1px solid var(--key-edge); border-radius:.65rem;
+    padding:.85rem .95rem; font-size:.82rem; line-height:1.5; color:var(--ink-dim);
+  }
+  footer.notes .note b{ color:var(--ink); }
+  footer.notes .note .swatch{ display:inline-block; width:.55rem; height:.55rem; border-radius:50%; margin-right:.35rem; vertical-align:middle; }
+
+  @media (max-width:640px){
+    :root{ --canyon:1.1rem; }
+    .key{ width:2.85rem; height:2.85rem; }
+    .thumbkey{ width:2.85rem; height:2.3rem; }
+    .key .base{ font-size:.85rem; }
+    .board{ transform:scale(.98); transform-origin:top center; }
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">corne42 · config/corne.keymap</p>
+    <h1>Plan de touches — 4 couches sur un keycap</h1>
+    <p>Chaque touche du schéma correspond à une position physique du clavier. Le gros caractère au centre est ce qu'elle tape en <b>Base</b> ; les trois coins montrent ce qu'elle devient sur les autres couches, quand ça change — sinon, pas de coin, ça veut dire "pareil qu'en Base".</p>
+  </header>
+
+  <div class="legend">
+    <div class="diagram">
+      <i class="tl">~</i><i class="tr">7</i><b>A</b><i class="br">&amp;</i>
+    </div>
+    <div class="legend-items">
+      <span><span class="dot base"></span><b>Centre</b> = Base (AZERTY)</span>
+      <span><span class="dot symboles"></span>Haut-gauche = Symboles (AltGr, F1-F12, média)</span>
+      <span><span class="dot nav"></span>Haut-droit = Navigation (pavé num., flèches, édition)</span>
+      <span><span class="dot chiffres"></span>Bas-droit = Chiffres (accents / chiffres avec Maj)</span>
+    </div>
+  </div>
+
+  <div class="board" id="board"></div>
+
+  <footer class="notes">
+    <div class="note"><b>Accès aux couches.</b> Maintenir <b>LWR</b> (pouce gauche) → Chiffres. Maintenir <b>RSE</b> (pouce droit) → Symboles.</div>
+    <div class="note"><span class="swatch" style="background:var(--accent-nest)"></span><b>Couche imbriquée.</b> En maintenant RSE, appuyer en plus sur la touche LWR (repère violet "→NAV") ouvre la couche Navigation.</div>
+    <div class="note"><b>Touches mortes (·).</b> <span class="tl" style="color:var(--accent-symboles);font-family:'JetBrains Mono',monospace">` </span> et <span style="color:var(--accent-symboles);font-family:'JetBrains Mono',monospace">^</span> (coin Symboles, marquées d'un point) se combinent avec la touche suivante — ex. <b>^</b> puis <b>E</b> donne <b>ê</b>. Pour le symbole seul : la touche puis Espace.</div>
+    <div class="note"><b>Maj automatique.</b> Sur les touches de ponctuation Base ( , ; : ! ), maintenir Maj donne respectivement ? . / § — ce n'est pas une couche, ça marche tout seul, donc ce n'est pas indiqué sur le schéma.</div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // [base, symboles(haut-gauche), navigation(haut-droit), chiffres(bas-droit), kind, deadKey?, nested?]
+  var K = [
+    ["Échap","","","",'mod'],
+    ["A","~","7","&",'letter'],
+    ["Z","#","8","é",'letter'],
+    ["E","{","9","\"",'letter'],
+    ["R","[","/","'",'letter'],
+    ["T","|","*","(",'letter'],
+    ["Y","`","Home","-",'letter',true],
+    ["U","\\","↑","è",'letter'],
+    ["I","^","Fin","_",'letter',true],
+    ["O","@","PgUp","ç",'letter'],
+    ["P","]","","à",'letter'],
+    ["⌫","}","",")",'mod'],
+
+    ["Tab","","","",'mod'],
+    ["Q","=","4","",'letter'],
+    ["S","F1","5","",'letter'],
+    ["D","F2","6","",'letter'],
+    ["F","F3","-","",'letter'],
+    ["G","F4","+","",'letter'],
+    ["H","€","←","",'letter'],
+    ["J","F5","↓","←",'letter'],
+    ["K","F6","→","↓",'letter'],
+    ["L","F7","PgDn","↑",'letter'],
+    ["M","F8","Ins","→",'letter'],
+    ["⏎","","","Suppr",'mod'],
+
+    ["Maj","","","",'mod'],
+    ["W","ù","1","BT✕",'letter'],
+    ["X","F9","2","BT1",'letter'],
+    ["C","F10","3","BT2",'letter'],
+    ["V","F11","0","BT3",'letter'],
+    ["B","F12",".","",'letter'],
+    ["N","$","Vol−","",'letter'],
+    [",","%","Vol+","",'letter'],
+    [";","<","⏯","",'letter'],
+    [":",">","⏮","",'letter'],
+    ["!","","⏭","",'letter'],
+    ["Maj","","","",'mod'],
+
+    ["Ctrl","","","",'mod'],
+    ["LWR","→NAV","","",'mod',false,true],
+    ["Espace","","","",'mod'],
+    ["RSE","","","",'mod'],
+    ["AltGr","","","",'mod'],
+    ["Win","","","",'mod'],
+  ];
+
+  function makeKey(d, colIdx, thumb){
+    var el = document.createElement('div');
+    el.className = 'key' + (d[4]==='mod' ? ' mod' : '') + (thumb ? ' thumbkey' : '') + ' col-' + colIdx;
+
+    var base = document.createElement('div');
+    base.className='base';
+    base.textContent = d[0];
+    el.appendChild(base);
+
+    if(d[6]){
+      var nest = document.createElement('div');
+      nest.className='nest';
+      nest.textContent = d[1];
+      el.appendChild(nest);
+    } else {
+      if(d[1]){
+        var tl=document.createElement('div'); tl.className='corner tl'+(d[5]?' dead':''); tl.textContent=d[1]; el.appendChild(tl);
+      }
+      if(d[2]){
+        var tr=document.createElement('div'); tr.className='corner tr'; tr.textContent=d[2]; el.appendChild(tr);
+      }
+      if(d[3]){
+        var br=document.createElement('div'); br.className='corner br'; br.textContent=d[3]; el.appendChild(br);
+      }
+    }
+    return el;
+  }
+
+  var board = document.getElementById('board');
+  var rows = [K.slice(0,12), K.slice(12,24), K.slice(24,36)];
+
+  rows.forEach(function(rowData){
+    var row = document.createElement('div'); row.className='row';
+    var left = document.createElement('div'); left.className='hand';
+    var right = document.createElement('div'); right.className='hand';
+    rowData.slice(0,6).forEach(function(d,i){ left.appendChild(makeKey(d,i,false)); });
+    rowData.slice(6,12).forEach(function(d,i){ right.appendChild(makeKey(d,i,false)); });
+    row.appendChild(left); row.appendChild(right);
+    board.appendChild(row);
+  });
+
+  var thumbs = K.slice(36,42);
+  var trow = document.createElement('div'); trow.className='row thumbs';
+  var tleft = document.createElement('div'); tleft.className='hand';
+  var tright = document.createElement('div'); tright.className='hand';
+  thumbs.slice(0,3).forEach(function(d,i){ tleft.appendChild(makeKey(d,i+1,true)); });
+  thumbs.slice(3,6).forEach(function(d,i){ tright.appendChild(makeKey(d,i+1,true)); });
+  trow.appendChild(tleft); trow.appendChild(tright);
+  board.appendChild(trow);
+})();
+</script>

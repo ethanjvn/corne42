@@ -35,3 +35,8 @@ parse_config:
     "&kp FR_RBRKT": "]"
     "&kp FR_RBRACE": "}"
     "&kp FR_EURO": "€"
+    "&kp FR_UGRAVE": "ù"
+    "&kp FR_PERCENT": "%"
+    "&kp FR_DOLLAR": "$"
+    "&kp FR_LT": "<"
+    "&kp FR_GT": ">"
