@@ -17,13 +17,13 @@ layers:
   - )
   - {t: ▽, type: trans}
   - '='
-  - UP ARROW
-  - BT CLR
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
+  - UP
+  - ù
+  - $
+  - '%'
   - €
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - <
+  - '>'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -31,12 +31,12 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
+  - BT CLR
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
   - {t: ▽, type: trans}
-  - ù
-  - $
-  - '%'
-  - <
-  - '>'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -76,11 +76,11 @@ layers:
   - PREV
   - NEXT
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - KP 0
   - KP 1
   - KP 2
   - KP 3
-  - KP 0
+  - KP EQUAL
   - KP DOT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
